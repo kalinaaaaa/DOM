@@ -113,3 +113,37 @@ let addNewItemToList = function () {
 };
 
 button.addEventListener("click", addNewItemToList);
+
+
+let buttons=document.getElementById("buttons")
+let radiNesto=function(event){
+  console.log(event)
+  console.log(event.target)
+  console.log(event.target.id)
+  console.log(event.offsetX)
+  buttons.addEventListener("click",radiNesto)
+}
+
+let div=document.getElementById("kocka")
+let changeColor=function(event){
+  let bojaRGB="rgb("+event.offsetX +","+event.offsetX+",40)"
+  event.target.style.backgroundColor = bojaRGB
+
+}
+
+kocka.addEventListener("mousemove",changeColor)
+
+let celaStrana=document.querySelector("*")
+let bojaStranice=function(event){
+
+
+let red=Math.floor(event.pageX/(window.innerWidth/255+1))
+let green=Math.floor(event.pageY/(window.innerHeight/255+1))
+let bojaRGB="rgb("+red+","+green+",60)"
+celaStrana.style.backgroundColor=bojaRGB
+}
+
+celaStrana.addEventListener("mousemove",bojaStranice)
+
+
+celaStrana.addEventListener("mousemove",bojaStranice)
